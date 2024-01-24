@@ -500,18 +500,18 @@
   </connection>
   <order>
     <hop>
-      <from>Créaation d'une table EQUIPE dans la BDD MySQL tdf2003-2 par script SQL</from>
-      <to>Lecture de fichier ASCII et longueur fixe EQUIPE.txt</to>
+      <from>Lecture fichier ASCII de longueur fixe Equipe.txt</from>
+      <to>Ecriture dans la table EQUIPE de la BDD MySQL tdf2003-2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Lecture de fichier ASCII et longueur fixe EQUIPE.txt</from>
+      <from>Lecture fichier ASCII de longueur fixe Equipe.txt</from>
       <to>Ecriture du compte dans l'onglet Trace</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Lecture de fichier ASCII et longueur fixe EQUIPE.txt</from>
-      <to>Ecriture dans la table EQUIPE de la BDD MySQL tdf2003-2</to>
+      <from>Créaation d'une table EQUIPE dans la BDD MySQL tdf2003-2 par script SQL</from>
+      <to>Lecture fichier ASCII de longueur fixe Equipe.txt</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -532,9 +532,9 @@
     <replace_variables>N</replace_variables>
     <quoteString>N</quoteString>
     <sql>CREATE TABLE IF NOT EXISTS `EQUIPE` (
-`TABLE_CODE` IN NOT NULL,
+`TABLE_CODE` CHAR( 3 ) NOT NULL,
 `ADDRESSE` CHAR( 50 ),
-`AUTRE` CHAR( 50 ),
+`AUTRE` CHAR( 50 )
 );</sql>
     <set_params>N</set_params>
     <insert_field/>
@@ -554,43 +554,6 @@
     <GUI>
       <xloc>528</xloc>
       <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Lecture de fichier ASCII et longueur fixe EQUIPE.txt</name>
-    <type>FixedInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>C:\Users\Godwin_Daniella\GitHub\Pentaho-Transformations\config_db\Données diverses\Equipe.txt</filename>
-    <line_width>80</line_width>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <line_feed>Y</line_feed>
-    <parallel>N</parallel>
-    <file_type>NONE</file_type>
-    <encoding/>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -667,6 +630,176 @@
     <GUI>
       <xloc>528</xloc>
       <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Lecture fichier ASCII de longueur fixe Equipe.txt</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator> </separator>
+    <enclosure/>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>DOS</format>
+    <encoding/>
+    <length>Characters</length>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>Fixed</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>EQUIPE_CODE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ADRESSE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>AUTRE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
