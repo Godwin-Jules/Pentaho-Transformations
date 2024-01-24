@@ -12,7 +12,7 @@ Voici, dans les quelques lignes qui suivent, comment faire une transformations a
 	Voici le lien de téléchargement de _Pentaho Data Integration_ : https://privatefilesbucket-community-edition.s3.us-west-2.amazonaws.com/9.4.0.0-343/ce/client-tools/pdi-ce-9.4.0.0-343.zip
 
 2. Lancement de l'outil **PDI**
-	* Après le téléchargement de _PDI_(qui est un fichier .zip), vous devez le dézipper (il y a plusieurs outils pour dézipper : Winrar, Winzip, 360 Zip, FileZilla, ...)
+	* Après le téléchargement de _PDI_(qui est un fichier .zip), vous devez le dézipper (il y a plusieurs outils pour dézipper : [Winrar](https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-624.exe), [Winzip](https://download.winzip.com/gl/nkln/winzip28-downwz.exe), [360 Zip](https://free.360totalsecurity.com/360zip/360zip_setup_1.0.0.1041.exe), [FileZilla](https://download.filezilla-project.org/client/FileZilla_3.66.4_win64_sponsored-setup.exe), ...)
 	* Pour lancer _PDI_, vous devez vous rendre le dossier dézippé et exécuter (double cliquer) le ficher nommé **Spoon.bat** pour les utilisateur de Windows ou **_spoon.sh_** pour les utilisateurs Linux
 
 3. Lancer une transformation
