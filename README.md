@@ -16,8 +16,8 @@ Voici, dans les quelques lignes qui suivent, comment faire une transformations a
 	* Pour lancer _PDI_, vous devez vous rendre le dossier dézippé et exécuter (double cliquer) le ficher nommé **Spoon.bat** pour les utilisateur de Windows ou **_spoon.sh_** pour les utilisateurs Linux
 
 3. Lancer une transformation
-	Nous allons bypasser comment créer une nouvelle transformation puisque notre objectif est de lancer les transformations déjà créées. Pour ce faire vous allez double cliquer sur le fichier .tkr; si ça ne s'ouvre pas automatiquement alors :
-	* Sélectionner le fichier .tkr
+	Nous allons bypasser comment créer une nouvelle transformation puisque notre objectif est de lancer les transformations déjà créées. Pour ce faire vous allez double cliquer sur le fichier .ktr; si ça ne s'ouvre pas automatiquement alors :
+	* Sélectionner le fichier .ktr
 	* Faire un clic droit
 	* Ensuite cliquer sur l'option 'Ouvrir avec' dans le menu contextuel qui s'affiche
 	* Votre système d'exploitation vous listera les applications susceptibles d'ouvrir ce type de fichier : sélectionner l'application l'application en question. Mais si cette application n'est pas lister, alors :
