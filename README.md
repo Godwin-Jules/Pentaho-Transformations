@@ -4,7 +4,7 @@ _Pentaho est une suite d'outils open-source qui offre des solutions complètes d
 
 Avant de passer à comment lancer une transformation, voici quelques dépendances necessaires :
 1. Deux bases de données nommées 'tdf2003_1'(qui servira de base de données source) et 'tdf2003_2'(qui servira de base de données de destination). Vous pouvez utiliser Xampp pour cela
-2. Les tables et les données dans ces bases de données se trouvent dans le dossier config_db
+2. Les tables et les données dans ces bases de données se trouvent dans le dossier [config_db](https://github.com/Godwin-Jules/Pentaho-Transformations/tree/main/config_db)
 
 Voici, dans les quelques lignes qui suivent, comment faire une transformations avec **Pentaho Data Integration**
 
