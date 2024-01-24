@@ -427,14 +427,77 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2024/01/13 15:48:23.106</created_date>
+    <created_date>2024/01/24 13:39:11.893</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/01/13 15:48:23.106</modified_date>
-    <key_for_session_key/>
+    <modified_date>2024/01/24 13:39:11.893</modified_date>
+    <key_for_session_key>H4sIAAAAAAAA/wMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>tdf2003_1</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>tdf2003-1</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
+        <attribute>500</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>tdf2003_2</name>
     <server>localhost</server>
@@ -501,20 +564,59 @@
   <order>
     <hop>
       <from>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</from>
-      <to>Sélection des coureurs français</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sélection des coureurs français</from>
       <to>Tri sur l'identité des coureurs</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Tri sur l'identité des coureurs</from>
-      <to>Écriture dans la table COUREUR4 de la BDD MySQL tdf2003-2</to>
+      <to>Ecriture dans la table COUREUR3 de la BDD MySQL tdf2003-2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Ecriture dans la table COUREUR3 de la BDD MySQL tdf2003-2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>tdf2003_2</connection>
+    <schema>tdf2003-2</schema>
+    <table>coureur3</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</name>
     <type>TableInput</type>
@@ -526,7 +628,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>tdf2003_2</connection>
+    <connection>tdf2003_1</connection>
     <sql>SELECT
   DOSSARD_COUREUR
 , IDENTITE_COUREUR
@@ -547,7 +649,7 @@ FROM `tdf2003-1`.coureur
         <name>DOSSARD_COUREUR</name>
         <length>3</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</origin>
         <comments>DOSSARD_COUREUR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -570,7 +672,7 @@ FROM `tdf2003-1`.coureur
         <name>IDENTITE_COUREUR</name>
         <length>40</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</origin>
         <comments>IDENTITE_COUREUR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -593,7 +695,7 @@ FROM `tdf2003-1`.coureur
         <name>CODE_PAYS_COUREUR</name>
         <length>3</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</origin>
         <comments>CODE_PAYS_COUREUR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -616,7 +718,7 @@ FROM `tdf2003-1`.coureur
         <name>CODE_EQUIPE_COUREUR</name>
         <length>3</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>Lecture de la table COUREUR de la BDD MySQL tdf2003-1</origin>
         <comments>CODE_EQUIPE_COUREUR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -643,52 +745,8 @@ FROM `tdf2003-1`.coureur
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Sélection des coureurs français</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to/>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>CODE_PAYS_COUREUR</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>FRA</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>240</yloc>
+      <xloc>224</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -721,52 +779,8 @@ FROM `tdf2003-1`.coureur
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Écriture dans la table COUREUR4 de la BDD MySQL tdf2003-2</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>tdf2003_2</connection>
-    <schema>tdf2003-2</schema>
-    <table>coureur4</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>240</yloc>
+      <xloc>528</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
